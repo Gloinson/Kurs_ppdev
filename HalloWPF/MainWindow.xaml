@@ -13,6 +13,8 @@
             <local:Stackpanel Margin="10" Grid.Row="0"  BorderThickness="5"/>
             <local:WrapPanel Margin="10" Grid.Row="1" BorderThickness="5"/>
             <local:Canvas Margin="10" Grid.Row="2" BorderThickness="5"/>
+            <local:DockPanel Margin="10" Grid.Row="3" BorderThickness="5"/>
+            <local:ViewBox Margin="10" Grid.Row="4" BorderThickness="5"/>
         </UniformGrid>
     </ScrollViewer>
 </Window>

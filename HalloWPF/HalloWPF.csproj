@@ -58,11 +58,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\DockPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\GridRotateButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\StackPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ViewBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -81,11 +89,17 @@
     <Compile Include="Controls\Canvas.xaml.cs">
       <DependentUpon>Canvas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DockPanel.xaml.cs">
+      <DependentUpon>DockPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\GridRotateButton.xaml.cs">
       <DependentUpon>GridRotateButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\StackPanel.xaml.cs">
       <DependentUpon>StackPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewBox.xaml.cs">
+      <DependentUpon>ViewBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\WrapPanel.xaml.cs">
       <DependentUpon>WrapPanel.xaml</DependentUpon>
