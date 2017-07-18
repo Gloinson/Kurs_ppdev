@@ -3,8 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:HalloWPF"
+        xmlns:local="clr-namespace:HalloWPF.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Disabled"
+                  Padding="50">
+        <UniformGrid Rows="10">
+            <local:Stackpanel Margin="10" Grid.Row="0"  BorderThickness="5"/>
+            <local:WrapPanel Margin="10" Grid.Row="1" BorderThickness="5"/>
+            <local:Canvas Margin="10" Grid.Row="2" BorderThickness="5"/>
+        </UniformGrid>
+    </ScrollViewer>
 </Window>
