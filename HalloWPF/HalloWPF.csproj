@@ -66,6 +66,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Grid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\GridRotateButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -98,6 +102,9 @@
     </Compile>
     <Compile Include="Controls\DockPanel.xaml.cs">
       <DependentUpon>DockPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Grid.xaml.cs">
+      <DependentUpon>Grid.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\GridRotateButton.xaml.cs">
       <DependentUpon>GridRotateButton.xaml</DependentUpon>
