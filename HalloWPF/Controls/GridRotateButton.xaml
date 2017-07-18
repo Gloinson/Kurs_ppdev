@@ -14,11 +14,13 @@
         <Button Name="xyz"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
-                Grid.Column="1" HorizontalAlignment="Stretch"
+                Grid.Column="1"
+                HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 RenderTransformOrigin="0.5,0.5">
             <Button.Content>
-                <TextBlock FontSize="{Binding ElementName=xyz, Path=Height}"/>
+                Muh!
+                <!--<TextBlock FontSize="{Binding ElementName=xyz, Path=Height}"/>-->
             </Button.Content>
             <Button.RenderTransform>
                 <TransformGroup>
@@ -26,5 +28,10 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
+        <Label Content="Muh"
+               Height="100"
+               HorizontalContentAlignment="Stretch"
+               VerticalContentAlignment="Stretch">
+        </Label>
     </Grid>
 </UserControl>
