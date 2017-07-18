@@ -62,7 +62,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Stackpanel.xaml">
+    <Page Include="Controls\StackPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\WrapPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -80,8 +84,11 @@
     <Compile Include="Controls\GridRotateButton.xaml.cs">
       <DependentUpon>GridRotateButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Stackpanel.xaml.cs">
-      <DependentUpon>Stackpanel.xaml</DependentUpon>
+    <Compile Include="Controls\StackPanel.xaml.cs">
+      <DependentUpon>StackPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WrapPanel.xaml.cs">
+      <DependentUpon>WrapPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
