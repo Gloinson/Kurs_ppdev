@@ -15,6 +15,7 @@
             <local:Canvas Margin="10" Grid.Row="2" BorderThickness="5"/>
             <local:DockPanel Margin="10" Grid.Row="3" BorderThickness="5"/>
             <local:ViewBox Margin="10" Grid.Row="4" BorderThickness="5"/>
+            <local:Border Margin="10" Grid.Row="4" BorderThickness="5"/>
         </UniformGrid>
     </ScrollViewer>
 </Window>

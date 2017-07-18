@@ -11,5 +11,10 @@
         <Button Content="Tst2!" DockPanel.Dock="Top"/>
         <Button Content="Tst3!" DockPanel.Dock="Left"/>
         <Button Content="Tst4!" DockPanel.Dock="Left"/>
+        <Button Content="Tst5!" DockPanel.Dock="Top"/>
+        <Button Content="Tst6!" DockPanel.Dock="Right"/>
+        <Button Content="Tst7!" DockPanel.Dock="Right"/>
+        <Button Content="Tst8!" DockPanel.Dock="Bottom"/>
+        <Button Content="Tst9!" DockPanel.Dock="Left"/>
     </DockPanel>
 </UserControl>
