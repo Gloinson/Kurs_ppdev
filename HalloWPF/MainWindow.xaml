@@ -7,10 +7,11 @@
         xmlns:local2="clr-namespace:HalloWPF.Exercises"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <!--<ScrollViewer VerticalScrollBarVisibility="Auto"
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
                   HorizontalScrollBarVisibility="Disabled"
                   Padding="50">
         <UniformGrid Rows="10">
+            <local:Menu  Margin="10" Grid.Row="0"  BorderThickness="5"/>
             <local:Stackpanel Margin="10" Grid.Row="0"  BorderThickness="5"/>
             <local:WrapPanel Margin="10" Grid.Row="1" BorderThickness="5"/>
             <local:Canvas Margin="10" Grid.Row="2" BorderThickness="5"/>
@@ -18,7 +19,8 @@
             <local:ViewBox Margin="10" Grid.Row="4" BorderThickness="5"/>
             <local:Border Margin="10" Grid.Row="4" BorderThickness="5"/>
             <local:Grid  Margin="10" Grid.Row="4" BorderThickness="5"/>
+            <local:Image  Margin="10" Grid.Row="4" BorderThickness="5"/>
         </UniformGrid>
-    </ScrollViewer>-->
-    <local2:Task01_TextEdit></local2:Task01_TextEdit>
+    </ScrollViewer>
+
 </Window>
