@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HalloWPF.Controls
+namespace Task1_Layout_Container.Controls
 {
     /// <summary>
     /// Interaction logic for Grid.xaml

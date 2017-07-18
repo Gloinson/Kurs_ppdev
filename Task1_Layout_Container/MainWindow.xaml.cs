@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HalloWPF.Exercises
+namespace Task1_Layout_Container
 {
     /// <summary>
-    /// Interaction logic for Task01_TextEdit.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Task01_TextEdit : UserControl
+    public partial class MainWindow : Window
     {
-        public Task01_TextEdit()
+        public MainWindow()
         {
             InitializeComponent();
         }

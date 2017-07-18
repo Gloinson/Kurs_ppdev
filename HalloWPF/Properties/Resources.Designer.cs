@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HalloWPF.Properties
+namespace Task1_Layout_Container.Properties
 {
 
 
