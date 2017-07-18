@@ -24,5 +24,12 @@ namespace Resources
         {
             InitializeComponent();
         }
+
+        private void StaticResourceChangeValue_Click(object sender, RoutedEventArgs e)
+        {
+            var cb = Resources["defaultIrgendwas"];
+            if (cb is SolidColorBrush c)
+                c.Color = Colors.BlanchedAlmond;
+        }
     }
 }

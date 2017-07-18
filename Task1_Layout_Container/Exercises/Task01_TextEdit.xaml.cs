@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Task1_Layout_Container.Exercises
+namespace WPFControls.Exercises
 {
     /// <summary>
     /// Interaction logic for Task01_TextEdit.xaml

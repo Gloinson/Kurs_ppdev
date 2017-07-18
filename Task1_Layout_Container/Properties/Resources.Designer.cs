@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Task1_Layout_Container.Properties
+namespace WPFControls.Properties
 {
 
 

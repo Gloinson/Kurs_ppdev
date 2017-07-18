@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Task1_Layout_Container
+namespace WPFControls
 {
     /// <summary>
     /// Interaction logic for App.xaml

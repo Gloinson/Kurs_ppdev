@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Task1_Layout_Container.Controls
+namespace WPFControls.Controls
 {
     /// <summary>
     /// Interaction logic for GridRotateButton.xaml

@@ -1,7 +1,7 @@
-﻿<Application x:Class="Task1_Layout_Container.App"
+﻿<Application x:Class="WPFControls.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Task1_Layout_Container"
+             xmlns:local="clr-namespace:WPFControls"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          
