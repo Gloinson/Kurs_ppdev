@@ -17,6 +17,6 @@
             <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Button Grid.Row="0" Grid.Column="0" Content="99 bugs to fix"></Button>
-        <Button Grid.Row="1" Grid.Column="1" Content="99 bugs to fix"></Button>
+        <Button Grid.Row="1" Grid.Column="1" Content="98 bugs to fix"></Button>
     </Grid>
 </UserControl>

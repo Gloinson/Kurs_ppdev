@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HalloWPF.Controls"
+        xmlns:local2="clr-namespace:HalloWPF.Exercises"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <ScrollViewer VerticalScrollBarVisibility="Auto"
+    <!--<ScrollViewer VerticalScrollBarVisibility="Auto"
                   HorizontalScrollBarVisibility="Disabled"
                   Padding="50">
         <UniformGrid Rows="10">
@@ -16,6 +17,8 @@
             <local:DockPanel Margin="10" Grid.Row="3" BorderThickness="5"/>
             <local:ViewBox Margin="10" Grid.Row="4" BorderThickness="5"/>
             <local:Border Margin="10" Grid.Row="4" BorderThickness="5"/>
+            <local:Grid  Margin="10" Grid.Row="4" BorderThickness="5"/>
         </UniformGrid>
-    </ScrollViewer>
+    </ScrollViewer>-->
+    <local2:Task01_TextEdit></local2:Task01_TextEdit>
 </Window>
