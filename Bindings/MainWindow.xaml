@@ -8,7 +8,7 @@
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
         <Style TargetType="ProgressBar">
-            <Setter Property="Margin" Value="10,10,0,0"/>
+            <Setter Property="Margin" Value="0,10,0,10"/>
         </Style>
     </Window.Resources>
     <StackPanel>
@@ -16,6 +16,7 @@
         <ProgressBar Height="20"
                      Maximum="{Binding ElementName=mySlider, Path=Maximum}"
                      Value="{Binding ElementName=mySlider, Path=Value}"/>
-        <TextBox Text="{Binding ElementName=mySlider, Path=Value}"/>
+        <TextBlock Text="{Binding ElementName=mySlider, Path=Value, Mode=OneWay}"/>
+        <TextBox Text="{Binding ElementName=mySlider, Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
     </StackPanel>
 </Window>
