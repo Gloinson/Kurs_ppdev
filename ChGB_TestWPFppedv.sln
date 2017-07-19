@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding_RelSourceTemplatedP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding_RelSourcePreviousData", "Binding_RelSourcePreviousData\Binding_RelSourcePreviousData.csproj", "{CDC09BBB-0E4F-4571-A3E1-CAA94EE9BEC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertersExample", "ConvertersExample\ConvertersExample.csproj", "{DFB1441F-5A77-43BA-910C-3591BEA5A63B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiConverters", "MultiConverters\MultiConverters.csproj", "{FCEDBE0C-72AB-44D3-9CE0-ED7A300035AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,14 @@ Global
 		{CDC09BBB-0E4F-4571-A3E1-CAA94EE9BEC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDC09BBB-0E4F-4571-A3E1-CAA94EE9BEC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDC09BBB-0E4F-4571-A3E1-CAA94EE9BEC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFB1441F-5A77-43BA-910C-3591BEA5A63B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFB1441F-5A77-43BA-910C-3591BEA5A63B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFB1441F-5A77-43BA-910C-3591BEA5A63B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFB1441F-5A77-43BA-910C-3591BEA5A63B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCEDBE0C-72AB-44D3-9CE0-ED7A300035AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCEDBE0C-72AB-44D3-9CE0-ED7A300035AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCEDBE0C-72AB-44D3-9CE0-ED7A300035AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCEDBE0C-72AB-44D3-9CE0-ED7A300035AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
