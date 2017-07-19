@@ -12,7 +12,7 @@
         </Style>
     </Window.Resources>
     <StackPanel>
-        <Slider x:Name="mySlider" Minimum="0" Maximum="50"/>
+        <Slider x:Name="mySlider" Minimum="0" Maximum="50" Value="20"/>
         <ProgressBar Height="20"
                      Maximum="{Binding ElementName=mySlider, Path=Maximum}"
                      Value="{Binding ElementName=mySlider, Path=Value}"/>
