@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Reso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources.Shared", "Resources.Shared\Resources.Shared.csproj", "{0502BC8A-D8D8-4942-A0AC-4059E62955E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Styles", "WpfApp2\Styles.csproj", "{DBA6BD3D-9938-472A-9F76-BE59F592F67C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Styles", "Styles\Styles.csproj", "{D1368EC9-A602-4172-94DE-C7AB271718F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{0502BC8A-D8D8-4942-A0AC-4059E62955E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0502BC8A-D8D8-4942-A0AC-4059E62955E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0502BC8A-D8D8-4942-A0AC-4059E62955E8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBA6BD3D-9938-472A-9F76-BE59F592F67C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBA6BD3D-9938-472A-9F76-BE59F592F67C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBA6BD3D-9938-472A-9F76-BE59F592F67C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBA6BD3D-9938-472A-9F76-BE59F592F67C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1368EC9-A602-4172-94DE-C7AB271718F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1368EC9-A602-4172-94DE-C7AB271718F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1368EC9-A602-4172-94DE-C7AB271718F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1368EC9-A602-4172-94DE-C7AB271718F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
