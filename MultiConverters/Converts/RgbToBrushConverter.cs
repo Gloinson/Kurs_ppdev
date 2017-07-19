@@ -13,10 +13,31 @@ namespace MultiConverters.Converts
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
+            var h = (byte)(double)values[0];
+            var r = (byte)(double)values[1];
+            var g = (byte)(double)values[2];
+            var b = (byte)(double)values[3];
+            return new SolidColorBrush(Color.FromArgb(h,r,g,b));
+        }
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+        {
+            if(value is SolidColorBrush x) {
+                return new object[] { (double)x.Color.A, (double)x.Color.R, (double)x.Color.G, (double)x.Color.B };
+            }
+            return new object[] { 0, 0, 0 };
+        }
+    }
+
+    class RgbToASCIIConverter : IMultiValueConverter
+    {
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
             var r = (byte)(double)values[0];
             var g = (byte)(double)values[1];
             var b = (byte)(double)values[2];
-            return new SolidColorBrush(Color.FromRgb(r, g, b));
+
+            return String.Format($"{r:X}{g:X}{b:X}");
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
