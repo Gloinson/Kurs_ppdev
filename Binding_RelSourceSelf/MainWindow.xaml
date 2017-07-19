@@ -10,7 +10,7 @@
         <Slider x:Name="mySlider"
                 Minimum="0"
                 Value="{Binding ElementName=myRectangle, Path=Height, Mode=TwoWay, Delay=10}"
-                Maximum="{Binding ElementName=myPanel, Path=ActualWidth}"/>
+                Maximum="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=StackPanel}, Path=ActualWidth}"/>
 
         <Rectangle x:Name="myRectangle"
                    Width="50"
