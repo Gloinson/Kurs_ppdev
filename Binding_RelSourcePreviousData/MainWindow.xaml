@@ -8,9 +8,50 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <ItemsControl Name="items"
-                          ScrollViewer.CanContentScroll="True"
-                          DisplayMemberPath="Value"/>
+            <ItemsControl Name="items">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0"
+                                    Width="{Binding Value}"
+                                    BorderBrush="Aquamarine"
+                                    BorderThickness="2"
+                                    CornerRadius="3"
+                                    HorizontalAlignment="Left"
+                                    Margin="2">
+                                <TextBlock Grid.Column="0" Text="{Binding Path=Value}"/>
+                            </Border>
+                            <Border Grid.Column="1"
+                                    Width="{Binding RelativeSource={RelativeSource Mode=PreviousData}, Path=Value}"
+                                    BorderBrush="Aquamarine"
+                                    BorderThickness="2"
+                                    CornerRadius="3"
+                                    HorizontalAlignment="Left"
+                                    Margin="2">
+                                <TextBlock Grid.Column="1" Text="{Binding RelativeSource={RelativeSource Mode=PreviousData}, Path=Value}"/>
+                            </Border>
+                            <Rectangle HorizontalAlignment="Left"
+                                       VerticalAlignment="Top"
+                                       Grid.Column="2"
+                                       Height="10"
+                                       Fill="Aquamarine"
+                                       Width="{Binding Value}"/>
+                            <Rectangle HorizontalAlignment="Left"
+                                       VerticalAlignment="Top"
+                                       Grid.Column="2"
+                                       Height="5"
+                                       Fill="Beige"
+                                       Width="{Binding RelativeSource={RelativeSource Mode=PreviousData}, Path=Value}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </ScrollViewer>
     </Grid>
 </Window>
