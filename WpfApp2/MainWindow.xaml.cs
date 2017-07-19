@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Resources
+namespace Styles
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,23 +23,6 @@ namespace Resources
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void StaticResourceChangeValue_Click(object sender, RoutedEventArgs e)
-        {
-            var cb = Resources["defaultIrgendwas"];
-            if (cb is SolidColorBrush c)
-                c.Color = Colors.BlanchedAlmond;
-        }
-
-        private void StaticResourceChangeInstance_Click(object sender, RoutedEventArgs e)
-        {
-            Resources["defaultIrgendwas"] = new SolidColorBrush(Colors.BlueViolet);
-        }
-
-        private void NewWindow(object sender, RoutedEventArgs e)
-        {
-            new MainWindow().Show();
         }
     }
 }

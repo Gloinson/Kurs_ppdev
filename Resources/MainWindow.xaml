@@ -10,6 +10,7 @@
         <SolidColorBrush x:Key="defaultIrgendwas" Color="AliceBlue"></SolidColorBrush>
         <SolidColorBrush x:Key="haesslich" Color="Chocolate"></SolidColorBrush>
         <system:Double x:Key="pi">3.1415926535</system:Double>
+        <system:Double x:Key="defHeight">40</system:Double>
     </Window.Resources>
 
     <StackPanel>
@@ -18,7 +19,23 @@
                      Height="20"
                      Margin="10,10,10,10">
         </ProgressBar>
-                <Button Content="ABC"
-                        Click="StaticResourceChangeValue_Click"></Button>
+        <Button Content="Static Resource Value Change"
+                Background="{StaticResource defaultIrgendwas}"
+                Height="{StaticResource defHeight}"
+                Margin="{StaticResource defaultMargin}"
+                Click="StaticResourceChangeValue_Click"/>
+        <Button Content="Static Resource Instance Change"
+                Background="{StaticResource defaultIrgendwas}"
+                Height="{StaticResource defHeight}"
+                Margin="{StaticResource defaultMargin}"
+                Click="StaticResourceChangeInstance_Click"/>
+        <Button Content="Dynamic Resource Instance Change"
+                Background="{DynamicResource defaultIrgendwas}"
+                Height="{StaticResource defHeight}"
+                Margin="{StaticResource defaultMargin}"
+                Click="StaticResourceChangeInstance_Click"/>
+        <Button Content="New Window"
+                Margin="{StaticResource defaultMargin}"
+                Click="NewWindow"/>
     </StackPanel>
 </Window>
