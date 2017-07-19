@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources.Shared", "Resourc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Styles", "Styles\Styles.csproj", "{D1368EC9-A602-4172-94DE-C7AB271718F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templates", "Templates\Templates.csproj", "{121F08B0-A9A3-4ECF-BEDB-480010B22BF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D1368EC9-A602-4172-94DE-C7AB271718F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1368EC9-A602-4172-94DE-C7AB271718F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1368EC9-A602-4172-94DE-C7AB271718F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{121F08B0-A9A3-4ECF-BEDB-480010B22BF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{121F08B0-A9A3-4ECF-BEDB-480010B22BF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{121F08B0-A9A3-4ECF-BEDB-480010B22BF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{121F08B0-A9A3-4ECF-BEDB-480010B22BF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
