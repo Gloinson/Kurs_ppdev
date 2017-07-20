@@ -6,7 +6,38 @@
         xmlns:local="clr-namespace:Trigger_Event"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <Window.Resources>
+        <Style TargetType="Image">
+            <Setter Property="Margin" Value="10,10,0,0"/>
+            <Setter Property="Width" Value="150"/>
+            <Style.Triggers>
+                <!-- only storyboards, no setters -->
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Width"
+                                             To="300" Duration="0:0:0.75"
+                                             AccelerationRatio="0.5"
+                                             DecelerationRatio="0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Width"
+                                             To="150" Duration="0:0:0.75"
+                                             AccelerationRatio="0.5"
+                                             DecelerationRatio="0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <StackPanel Margin="50" Orientation="Horizontal">
+        <Image Source="http://lorempixel.com/400/200/technics"/>
+        <Image Source="http://lorempixel.com/400/200/food"/>
+        <Image Source="http://lorempixel.com/400/200/people"/>
+    </StackPanel>
 </Window>
