@@ -17,4 +17,14 @@ namespace Validation.ValidationRules
             return ValidationResult.ValidResult;
         }
     }
+
+    public class MustNotBeAlphanumeric : ValidationRule
+    {
+        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
+        {
+            if(value is string s && !s.All(c => char.IsNumber(c) || char.IsPunctuation(c)))
+                return new ValidationResult(false, "Value must be string.");
+            return ValidationResult.ValidResult;
+        }
+    }
 }

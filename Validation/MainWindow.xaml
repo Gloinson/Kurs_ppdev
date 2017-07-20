@@ -15,6 +15,7 @@
                 <Setter.Value>
                     <ControlTemplate>
                         <StackPanel>
+                            <!-- shows only this error -->
                             <StackPanel Orientation="Horizontal">
                                 <AdornedElementPlaceholder x:Name="element"/>
                                 <TextBlock Text="!!!"
@@ -27,6 +28,7 @@
                                        Foreground="Red">
                             </TextBlock>
                             
+                            <!-- shows all errors -->
                             <ItemsControl ItemsSource="{Binding ElementName=element,
                                                                 Path=AdornedElement.(Validation.Errors)}">
                                 <ItemsControl.ItemTemplate>
@@ -47,7 +49,16 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+                            Value="{Binding RelativeSource={RelativeSource Self},
+                                    Path=AdornedElement.(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
+        
     </Window.Resources>
 
     <StackPanel Margin="20">
@@ -61,6 +72,7 @@
                          StringFormat="0.0"
                          UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
+                        <validrules:MustNotBeAlphanumeric />
                         <validrules:MustNotBeModulo2ValidationRule />
                     </Binding.ValidationRules>
                 </Binding>
