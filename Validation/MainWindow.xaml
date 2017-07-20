@@ -4,16 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Validation"
+        xmlns:validrules="clr-namespace:Validation.ValidationRules"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel Margin="20">
         <Slider x:Name="mySlider"
                 Minimum="0"
                 Maximum="255"/>
-        <TextBox Text="{Binding ElementName=mySlider,
-                                Path=Value,
-                                StringFormat=0.0,
-                                UpdateSourceTrigger=PropertyChanged}"
-                 Margin="0,20,0,0"/>
+        <TextBox Margin="0,20,0,0">
+            <TextBox.Text>
+                <Binding ElementName="mySlider"
+                         Path="Value"
+                         StringFormat="0.0"
+                         UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validrules:MustNotBeModulo2ValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
     </StackPanel>
 </Window>
