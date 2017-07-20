@@ -1,0 +1,121 @@
+﻿<Window x:Class="HalloBlend.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HalloBlend"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border BorderBrush="Black" BorderThickness="1"/>
+                            <Image Margin="13.667,11.5,27.167,5.166"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Storyboard x:Key="OnLoaded1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="188">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="44">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="44">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="5">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="412">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="412">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter">
+            <BeginStoryboard Storyboard="{StaticResource OnLoaded1}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.99,0.009" StartPoint="0.006,0.605">
+                <GradientStop Color="#FFE5F91E" Offset="0"/>
+                <GradientStop Color="#FFFF2E00" Offset="1"/>
+                <GradientStop Color="#FFFDFEF4" Offset="0.833"/>
+                <GradientStop Color="#FF2C598F" Offset="0.431"/>
+                <GradientStop Color="#FF9FBF90" Offset="0.703"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Path Data="M98.666667,62.333333 C113.7808,77.44747 104.26318,104.68449 106,129 106.3554,133.97561 108.33146,137.16386 111.33333,141.66667 115.45625,147.85104 138.19753,174.1358 150,162.33333 158.2459,154.08744 159.41622,149.75314 161.33333,136.33333 162.9093,125.30155 166.92042,110.84084 161.33333,99.666667 155.27848,87.556964 146.57433,80.141046 126,93 111.01175,102.36766 114.51713,114.19501 120.66667,136.33333 126.60965,157.72807 127.99251,166.32692&#xD;&#xA;146.66667,182.33333 166.05189,198.94924 178.11457,201.46191 206,202.33333 219.95627,202.76947 224.37213,202.15713 236.66667,194.33333 246.05557,188.35858 198.22745,155.9788 201.89675,144.97088 204.77846,136.32576 209.11943,163.52501 178.08741,158.353 172.05313,157.34729 214.4264,186.15449 208.85732,188.38212 199.44371,192.14757 228.25965,119.5193 235.33333,133.66667 240.00095,143.0019 245.52791,151.6252 251.33333,160.33333 255.87784,167.15009&#xD;&#xA;261.08505,170.87939 268,175.66667 277.3714,182.15456 285.81015,187.91832 298.66667,187 313.76049,185.92187 312,98.562002 312,73.666667 312,73.50667 311.25386,59.755855 308.66667,67 305.94688,74.615415 302.10981,81.468643 305.33333,90.333333 309.57889,102.00863 319.20342,109.48951 326.66667,119.66667 335.60281,131.85232 340.25571,139 360,139 368.14515,139 365.33333,127.8775 365.33333,114.33333&#xD;&#xA;365.33333,99.783632 372.65345,75.650147 362,62.333333 356.35883,55.281867 334.3686,45.7372 354.66667,86.333333 357.338,91.676002 379.33333,108.94458 379.33333,79 379.33333,67.392356 379.36914,60.230472 376,49 374.52678,44.089278 373.27331,41.364407 370,37 366.29724,48.108269 361.32558,56.333333 391.33333,56.333333 401.01811,56.333333 411.0012,55.966547 420.66667,55 423.43229,54.723438 427.53845,54.476929&#xD;&#xA;430,53 433.22718,51.063694 432.9819,48.710377 432.66667,43.666667 432.42894,39.863119 434.96212,17.991004 425.33333,21 421.5093,22.195009 415.01276,22.923454 414,29 411.70954,42.742783 446.19316,64.403024 472,53" Fill="#FF4A4AEC" Margin="98.667,20.717,44,115.562" Stretch="Fill" Stroke="Black"/>
+        <Path Data="M71.333333,294.33333 C114.065,276.52847 106.55576,274.10203 128,219.66667 129.05894,216.97859 134.18777,194.31266 142,199 163.55392,211.93235 174.15695,226.5718 186.66667,249.66667 188.83394,253.6678 191.60272,266.06848 196,269 198.30893,270.53929 199.84468,270.28272 202.66667,269 218.37198,261.86122 207.30844,240.82794 212,223 215.22312,210.75213 208.78209,210.3997 235.33333,225.66667 261.55811,240.74591 287.53876,256.77039&#xD;&#xA;315.33333,269 324.28053,272.93677 332.25365,277 342,277 337.18896,272.18896 332.92008,197.0694 345.33333,207 368.90857,225.86019 398.64984,237.32492 426,251 419.87416,234.66442 419.79658,220.94849 424,202.33333 426.70266,190.3644 426.04312,187.59121 431.33333,178.33333 431.34436,178.31403 433.10977,172.33333 434,172.33333 450.33417,172.33333 475.81319,206.06366 490,218.33333 499.25325,226.33615&#xD;&#xA;509.42772,234.73294 520,239.66667" Fill="White" Height="123" Margin="71.333,0,-4,23.667" Stretch="Fill" Stroke="Black" VerticalAlignment="Bottom"/>
+        <TreeViewItem Header="TreeViewItem" HorizontalAlignment="Left" Margin="71.333,20.717,0,129.616" Width="93"/>
+        <Button Content="Button" Height="25.333" Margin="243.333,17,147,0" VerticalAlignment="Top" Style="{DynamicResource ButtonStyle1}"/>
+        <Rectangle x:Name="rectangle" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="51" Margin="46,29,0,0" Stroke="Black" VerticalAlignment="Top" Width="63" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+    </Grid>
+</Window>
