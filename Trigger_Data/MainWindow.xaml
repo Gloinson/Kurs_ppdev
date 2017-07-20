@@ -13,9 +13,16 @@
                 <Setter Property="Height"
                         Value="{Binding RelativeSource={RelativeSource Self}, Path=Width, Mode=TwoWay}"/>
                 <Setter Property="Fill" Value="CadetBlue"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=mycheckBox, Path=IsChecked}" Value="False">
+                        <Setter Property="Fill" Value="Chartreuse"/>
+                    </DataTrigger>
+                </Style.Triggers>
             </Style>
         </StackPanel.Resources>
-        <CheckBox Content="Click Me" HorizontalAlignment="Center"/>
+        <CheckBox x:Name="mycheckBox"
+                  Content="Click Me"
+                  HorizontalAlignment="Center"/>
         <Rectangle Margin="0,20,0,0"/>
     </StackPanel>
 </Window>
