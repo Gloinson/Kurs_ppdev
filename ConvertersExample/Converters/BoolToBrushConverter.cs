@@ -13,11 +13,13 @@ namespace ConvertersExample.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if(value is bool x && x) {
-                if (parameter != null && parameter is string[] colors && colors.Length > 1)
+            if (parameter != null && parameter is string[] colors && colors.Length > 1) {
+                if (value is bool x && x) {
                     return colors[0];
+                }
+                return colors[1];
             }
-            return Brushes.Red;
+            return Brushes.AliceBlue;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
