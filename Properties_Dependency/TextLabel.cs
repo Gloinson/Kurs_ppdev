@@ -9,10 +9,11 @@ using System.Windows.Media;
 
 namespace Properties_Dependency
 {
-    class TextLabel : FrameworkElement
+    public class TextLabel : FrameworkElement
     {
         public static readonly DependencyProperty TextProperty;
         public static readonly DependencyProperty FontSizeProperty;
+        private const double padding = 5;
 
         static TextLabel()
         {
@@ -25,7 +26,7 @@ namespace Properties_Dependency
                     flags: FrameworkPropertyMetadataOptions.AffectsMeasure |
                            FrameworkPropertyMetadataOptions.AffectsRender));
             FontSizeProperty = DependencyProperty.Register(
-                "Fontsize",
+                "FontSize",
                 typeof(double),
                 typeof(TextLabel),
                 new FrameworkPropertyMetadata(
@@ -56,6 +57,25 @@ namespace Properties_Dependency
             {
                 SetValue(FontSizeProperty, value);
             }
+        }
+
+        protected override Size MeasureOverride(Size availableSize)
+        {
+            var text = GetFormattedText();
+            return new Size(text.Width + padding, text.Height + padding);
+        }
+
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+            base.OnRender(drawingContext);
+
+            drawingContext.DrawRectangle(
+                Brushes.LightGray,
+                null,
+                new Rect(RenderSize)); // <- RenderSize is calculated based on MeasureOverride
+            drawingContext.DrawText(
+                GetFormattedText(),
+                new Point(padding / 2, padding / 2));
         }
 
         private FormattedText GetFormattedText()

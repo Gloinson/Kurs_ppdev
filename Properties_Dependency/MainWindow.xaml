@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:Properties_Dependency"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <local:TextLabel Text="Hallo Dependency Properties"
+                         FontSize="{Binding ElementName=FontSizeTextbox, Path=Text}"/>
+
+        <TextBox Name="FontSizeTextbox" Margin="20"/>
+    </StackPanel>
 </Window>
