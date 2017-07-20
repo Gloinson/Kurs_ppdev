@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 
 namespace Properties_Dependency
 {
@@ -27,9 +29,9 @@ namespace Properties_Dependency
                 typeof(double),
                 typeof(TextLabel),
                 new FrameworkPropertyMetadata(
-                    defaultValue: string.Empty,
-                    flags: FrameworkPropertyMetadataOptions.AffectsMeasure |
-                           FrameworkPropertyMetadataOptions.AffectsRender));
+                    defaultValue: 11.0,
+                    flags: FrameworkPropertyMetadataOptions.AffectsMeasure),
+                validateValueCallback: (v => (double)v > 0));
         }
 
         public string Text
@@ -54,6 +56,17 @@ namespace Properties_Dependency
             {
                 SetValue(FontSizeProperty, value);
             }
+        }
+
+        private FormattedText GetFormattedText()
+        {
+            return new FormattedText(
+              Text,
+              CultureInfo.InvariantCulture,
+              FlowDirection.LeftToRight,
+              new Typeface("Calibre"),
+              FontSize,
+              Brushes.Black);
         }
     }
 }
