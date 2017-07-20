@@ -9,7 +9,26 @@
     <Window.Resources>
         <Style TargetType="Image">
             <Style.Triggers>
-
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard TargetProperty="Width">
+                                <DoubleAnimation To="300" Duration="0:0:0.75"
+                                                 AccelerationRatio="0.5"
+                                                 DecelerationRatio="0.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard TargetProperty="Width">
+                                <DoubleAnimation To="150" Duration="0:0:0.75"
+                                                 AccelerationRatio="0.5"
+                                                 DecelerationRatio="0.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
             </Style.Triggers>
             <Setter Property="Margin" Value="5,5,0,0"></Setter>
             <Setter Property="Width" Value="150"/>
