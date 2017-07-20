@@ -13,11 +13,20 @@ namespace MultiConverters.Converts
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            var h = (byte)(double)values[0];
-            var r = (byte)(double)values[1];
-            var g = (byte)(double)values[2];
-            var b = (byte)(double)values[3];
-            return new SolidColorBrush(Color.FromArgb(h,r,g,b));
+            if(values.Length>3) {
+                try
+                {
+                    var h = (byte)(double)values[0];
+                    var r = (byte)(double)values[1];
+                    var g = (byte)(double)values[2];
+                    var b = (byte)(double)values[3];
+                    return new SolidColorBrush(Color.FromArgb(h, r, g, b));
+                }
+                catch(System.InvalidCastException)
+                {
+                }
+            }
+            return new SolidColorBrush(Color.FromArgb(0, 0, 0, 0));
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
