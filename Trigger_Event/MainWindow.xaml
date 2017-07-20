@@ -25,11 +25,6 @@
                 <EventTrigger RoutedEvent="MouseLeftButtonDown">
                     <BeginStoryboard>
                         <Storyboard>
-                            <!--<DoubleAnimation Storyboard.TargetProperty="Width"
-                                             To="{Binding RelativeSource={RelativeSource AncestorType=Window, AncestorLevel=1}, Path=Width}"
-                                             Duration="0:0:0.75"
-                                             AccelerationRatio="0.5"
-                                             DecelerationRatio="0.5"/>-->
                             <DoubleAnimation Storyboard.TargetProperty="Width"
                                              To="600"
                                              Duration="0:0:0.75"

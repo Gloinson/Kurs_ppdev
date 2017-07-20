@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trigger_Data", "Trigger_Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trigger_Event", "Trigger_Event\Trigger_Event.csproj", "{A885E667-095F-4FBF-A32D-36F73E4AED59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taks2_ResizeOnClick", "Taks2_ResizeOnClick\Taks2_ResizeOnClick.csproj", "{4A19D054-3262-4339-BBD5-36350FC67F40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{A885E667-095F-4FBF-A32D-36F73E4AED59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A885E667-095F-4FBF-A32D-36F73E4AED59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A885E667-095F-4FBF-A32D-36F73E4AED59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A19D054-3262-4339-BBD5-36350FC67F40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A19D054-3262-4339-BBD5-36350FC67F40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A19D054-3262-4339-BBD5-36350FC67F40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A19D054-3262-4339-BBD5-36350FC67F40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
