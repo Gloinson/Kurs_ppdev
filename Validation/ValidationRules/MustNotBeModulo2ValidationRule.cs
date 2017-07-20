@@ -12,12 +12,8 @@ namespace Validation.ValidationRules
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
-            if(value is double c)
-            {
-                var i = (int)c;
-                if ((i % 2) == 0)
-                    return new ValidationResult(false, "Value must not be modulo 2.");
-            }
+            if(value is string s && int.TryParse(s, out int d) && (d%2)==0)
+                return new ValidationResult(false, "Value must not be modulo 2.");
             return ValidationResult.ValidResult;
         }
     }

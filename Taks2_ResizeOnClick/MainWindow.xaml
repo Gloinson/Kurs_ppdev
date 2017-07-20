@@ -11,7 +11,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <Image Source="http://lorempixel.cm/400/200/technics"/>
+                        <Image Source="http://lorempixel.com/400/200/technics"/>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -25,8 +25,9 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    
+
     <StackPanel Margin="50" Orientation="Horizontal">
-        <CheckBox/>
+        <CheckBox>
+        </CheckBox>
     </StackPanel>
 </Window>
