@@ -4,9 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloMVVM.Views"
+        xmlns:vm="clr-namespace:HelloMVVM.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="{Binding WelcomeText}" Height="350" Width="525">
+    <Window.DataContext>
+        <!-- V2: explicitly declare DataContext here
+                 ++ provides IntelliSense-features
+        -->
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <StackPanel>
+        <!-- set the datacontext of the window to the viewmodel instance -->
+
+        <TextBox HorizontalAlignment="Center"
+                   FontFamily="Calibre"
+                   FontSize="44"
+                   FontWeight="Bold"
+                   Foreground="CornflowerBlue"
+                   Background="LightPink"
+                   Text="{Binding WelcomeText}"/>
+
+    </StackPanel>
 </Window>

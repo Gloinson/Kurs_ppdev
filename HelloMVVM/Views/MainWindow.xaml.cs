@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelloMVVM.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace HelloMVVM.Views
         public MainWindow()
         {
             InitializeComponent();
+            // V1: set DataContext explizitly
+            // DataContext = new MainWindowViewModel();
         }
     }
 }
