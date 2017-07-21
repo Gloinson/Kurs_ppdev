@@ -18,6 +18,7 @@ namespace HelloMVVM.ViewModels
 
         protected void RaisePropertyChanged2([CallerMemberName] string param = null)
         {
+            // inherently thread-safe, copying the value itself before usage
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(param));
         }
     }
