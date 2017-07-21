@@ -28,6 +28,11 @@ namespace DelegateInPraxis
             foreach (var e in employees.Where(e => e.Experience > criteria2))
                 Console.WriteLine($"Id: {e.Id,2} - {e.Name,20} - {e.Experience,5}");
 
+            Console.WriteLine("The good ones again");
+            employees
+                .Where(e => e.Experience > criteria2).ToList()
+                .ForEach(e => Console.WriteLine($"Id: {e.Id,2} - {e.Name,20} - {e.Experience,5}"));
+
             Console.ReadLine();
         }
 
