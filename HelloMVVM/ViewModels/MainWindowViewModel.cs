@@ -21,11 +21,13 @@ namespace HelloMVVM.ViewModels
             }
         }
 
-        public ICommand ChangeTextCommand { get; } 
+        public ICommand ChangeTextCommand { get; }
+        public ICommand ChangeTextCommand2 { get; }
 
         public MainWindowViewModel()
         {
-             ChangeTextCommand = new RelayCommand(() => WelcomeText = "ViewModel says hello via Command");
+            ChangeTextCommand = new RelayCommand(() => WelcomeText = "ViewModel says hello via Command");
+            ChangeTextCommand2 = new RelayCommand(() => WelcomeText = "Wahouw!");
         }
 
         // for Lists<> : use ObservableCollection()

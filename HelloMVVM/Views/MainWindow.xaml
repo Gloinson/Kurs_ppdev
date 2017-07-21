@@ -13,8 +13,13 @@
         -->
         <vm:MainWindowViewModel/>
     </Window.DataContext>
+    <Window.InputBindings>
+        <KeyBinding Key="C" Modifiers="Ctrl+Alt+Shift"
+                    Command="{Binding ChangeTextCommand2}"/>
+    </Window.InputBindings>
     <StackPanel>
         <!-- set the datacontext of the window to the viewmodel instance -->
+
 
         <TextBlock HorizontalAlignment="Center"
                    FontFamily="Calibre"
@@ -33,5 +38,7 @@
                 Width="100"
                 Command="{Binding ChangeTextCommand}"
                 Content="Try Me"/>
+
+        
     </StackPanel>
 </Window>
