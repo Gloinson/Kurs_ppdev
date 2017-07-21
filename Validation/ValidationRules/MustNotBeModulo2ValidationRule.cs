@@ -23,7 +23,7 @@ namespace Validation.ValidationRules
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             if(value is string s && !s.All(c => char.IsNumber(c) || char.IsPunctuation(c)))
-                return new ValidationResult(false, "Value must be string.");
+                return new ValidationResult(false, "Value must be alpanumeric string.");
             return ValidationResult.ValidResult;
         }
     }

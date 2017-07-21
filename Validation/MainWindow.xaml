@@ -8,6 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
+        <!-- multiple usage resource -->
         <validrules:MustNotBeModulo2ValidationRule x:Key="notMod2Valid"/>
 
         <Style TargetType="TextBox">
@@ -51,10 +52,10 @@
             </Setter>
 
             <Style.Triggers>
-                <Trigger Property="Validation.HasError" Value="true">
+                <Trigger Property="Validation.HasError" Value="True">
                     <Setter Property="ToolTip"
                             Value="{Binding RelativeSource={RelativeSource Self},
-                                    Path=AdornedElement.(Validation.Errors)[0].ErrorContent}"/>
+                                    Path=AdornedElement.(Validation.Errors)}"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
