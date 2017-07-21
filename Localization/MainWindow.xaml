@@ -7,10 +7,14 @@
         xmlns:p="clr-namespace:Localization.Properties"
         mc:Ignorable="d"
         Title="{x:Static p:Resources.Title}" Height="350" Width="525">
-    <Grid>
+    <StackPanel>
         <TextBlock HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="22"
                    Text="{x:Static p:Resources.Name}"/>
-    </Grid>
+        <TextBlock HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="22"
+                   Text="{x:Static p:Resources.Extra}"/>
+    </StackPanel>
 </Window>
