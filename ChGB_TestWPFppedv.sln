@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Localization", "Localizatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloBlend", "HalloBlend\HalloBlend.csproj", "{82CBD0FD-611A-46A2-A829-BBA0661D0857}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateInPraxis", "DelegateExample_\DelegateInPraxis.csproj", "{61A4C228-8B32-48E3-8A2C-2D1C65A6C22F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{82CBD0FD-611A-46A2-A829-BBA0661D0857}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82CBD0FD-611A-46A2-A829-BBA0661D0857}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82CBD0FD-611A-46A2-A829-BBA0661D0857}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61A4C228-8B32-48E3-8A2C-2D1C65A6C22F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61A4C228-8B32-48E3-8A2C-2D1C65A6C22F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61A4C228-8B32-48E3-8A2C-2D1C65A6C22F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61A4C228-8B32-48E3-8A2C-2D1C65A6C22F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
