@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace HelloMVVM.ViewModels
 {
@@ -18,6 +19,13 @@ namespace HelloMVVM.ViewModels
                 _welcomeText = value;
                 RaisePropertyChanged2();
             }
+        }
+
+        public ICommand ChangeTextCommand { get; } 
+
+        public MainWindowViewModel()
+        {
+             ChangeTextCommand = new RelayCommand(() => WelcomeText = "ViewModel says hello via Command");
         }
 
         // for Lists<> : use ObservableCollection()
