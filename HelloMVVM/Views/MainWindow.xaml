@@ -30,7 +30,9 @@
                  Text="{Binding WelcomeText, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Button Margin="0, 20, 0, 0"
+                Width="100"
                 Click="Button_Click"
+                Command="{Binding }"
                 Content="Try Me"/>
     </StackPanel>
 </Window>
