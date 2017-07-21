@@ -18,6 +18,7 @@
         <KeyBinding Key="C" Modifiers="Ctrl+Alt+Shift"
                     Command="{Binding ChangeTextCommand2}"/>
     </Window.InputBindings>
+    <!-- example: load data on load from dbase or other -->
     <inter:Interaction.Triggers>
         <inter:EventTrigger EventName="Loaded">
             <inter:InvokeCommandAction Command="{Binding ChangeTextCommand}"/>
