@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloMVVM"
         xmlns:vm="clr-namespace:HelloMVVM.ViewModels"
+        xmlns:inter="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Title="{Binding WelcomeText}" Height="350" Width="525">
     <Window.DataContext>
@@ -17,6 +18,11 @@
         <KeyBinding Key="C" Modifiers="Ctrl+Alt+Shift"
                     Command="{Binding ChangeTextCommand2}"/>
     </Window.InputBindings>
+    <inter:Interaction.Triggers>
+        <inter:EventTrigger EventName="Loaded">
+            <inter:InvokeCommandAction Command="{Binding ChangeTextCommand}"/>
+        </inter:EventTrigger>
+    </inter:Interaction.Triggers>
     <StackPanel>
         <!-- set the datacontext of the window to the viewmodel instance -->
 
