@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,10 +13,20 @@ namespace DelegateInPraxis
         static void Main(string[] args)
         {
             var employees = GetData();
-            var badones = Abfrage(employees, e => e.Experience<10 );
 
-            foreach (var e in badones)
+            var criteria = 5;
+            Console.WriteLine("The worst ones");
+            foreach (var e in Abfrage(employees, delegate (Employee e) { return e.Experience < criteria; }))
+                Console.WriteLine($"Id: {e.Id,2} - {e.Name,20} - {e.Experience,5}");
+
+            var criteria2 = 10;
+            Console.WriteLine("The bad ones");
+            foreach (var e in Abfrage(employees, e => e.Experience > criteria && e.Experience < criteria2 ))
                 Console.WriteLine($"Id: {e.Id, 2} - {e.Name, 20} - {e.Experience, 5}");
+
+            Console.WriteLine("The good ones");
+            foreach (var e in employees.Where(e => e.Experience > criteria2))
+                Console.WriteLine($"Id: {e.Id,2} - {e.Name,20} - {e.Experience,5}");
 
             Console.ReadLine();
         }
