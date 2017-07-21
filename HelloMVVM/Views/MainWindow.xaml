@@ -16,13 +16,21 @@
     <StackPanel>
         <!-- set the datacontext of the window to the viewmodel instance -->
 
-        <TextBox HorizontalAlignment="Center"
+        <TextBlock HorizontalAlignment="Center"
                    FontFamily="Calibre"
                    FontSize="44"
                    FontWeight="Bold"
                    Foreground="CornflowerBlue"
                    Background="LightPink"
                    Text="{Binding WelcomeText}"/>
+   
+        <TextBox HorizontalAlignment="Center"
+                 Margin="0, 20, 0, 0"
+                 FontSize="12"
+                 Text="{Binding WelcomeText, UpdateSourceTrigger=PropertyChanged}"/>
 
+        <Button Margin="0, 20, 0, 0"
+                Click="Button_Click"
+                Content="Try Me"/>
     </StackPanel>
 </Window>
