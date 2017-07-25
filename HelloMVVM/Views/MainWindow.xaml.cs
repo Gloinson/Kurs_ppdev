@@ -28,9 +28,10 @@ namespace HelloMVVM.Views
             // DataContext = new MainWindowViewModel();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            (DataContext as MainWindowViewModel).WelcomeText = "You're not welcome anymore!";
-        }
+        // V2: direct implementation is baaaad
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    (DataContext as MainWindowViewModel).WelcomeText = "You're not welcome anymore!";
+        //}
     }
 }
