@@ -8,11 +8,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
-        <!--<converters:XtoXYConverter x:Key="myXYConverter"/>-->
+        <converters:XtoPointConverter x:Key="myXYConverter"/>
+        <converters:XtoXYConverter x:Key="txtXYConverter"/>
     </Window.Resources>
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <ItemsControl Name="items">
+            <ItemsControl Name="items" AlternationCount="100">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -29,7 +30,7 @@
                                     CornerRadius="3"
                                     HorizontalAlignment="Left"
                                     Margin="2">
-                                <TextBlock Grid.Column="0" Text="{Binding Path=Value}"/>
+                                <TextBlock x:Name="txtBlck" Text="{Binding Path=Value}"/>
                             </Border>
                             <Border Grid.Column="1"
                                     Width="{Binding RelativeSource={RelativeSource Mode=PreviousData}, Path=Value}"
@@ -38,7 +39,7 @@
                                     CornerRadius="3"
                                     HorizontalAlignment="Left"
                                     Margin="2">
-                                <TextBlock Grid.Column="1" Text="{Binding RelativeSource={RelativeSource Mode=PreviousData}, Path=Value}"/>
+                                <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=PreviousData}, Path=Value}"/>
                             </Border>
                             <Rectangle HorizontalAlignment="Left"
                                        VerticalAlignment="Top"
@@ -52,12 +53,55 @@
                                        Height="5"
                                        Fill="Beige"
                                        Width="{Binding RelativeSource={RelativeSource Mode=PreviousData}, Path=Value}"/>
-                            <Path Stroke="Black" StrokeThickness="3" Fill="Blue" >
+
+                            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                <TextBlock Text="X, Y-Coordinates, from, to"></TextBlock>
+                                <TextBlock Margin="10,0">
+                                    <TextBlock.Text>
+                                        <MultiBinding Converter="{StaticResource txtXYConverter}" Mode="OneWay">
+                                            <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                 Path="(ItemsControl.AlternationIndex)"/>
+                                            <Binding ElementName="txtBlck" Path="ActualHeight"/>
+                                            <Binding RelativeSource="{RelativeSource Mode=PreviousData}" Path="Value"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                                <TextBlock Margin="10,0">
+                                    <TextBlock.Text>
+                                        <MultiBinding Converter="{StaticResource txtXYConverter}" Mode="OneWay">
+                                            <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                 Path="(ItemsControl.AlternationIndex)"/>
+                                            <Binding ElementName="txtBlck" Path="ActualHeight"/>
+                                            <Binding Path="Value"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </StackPanel>
+
+                            <Path Grid.Column="3" Grid.ColumnSpan="100" Stroke="Black" StrokeThickness="2" Fill="Blue">
                                 <Path.Data>
                                     <GeometryGroup>
-                                        <!--<LineGeometry
-                                            StartPoint="{Binding RelativeSource={RelativeSource Mode=PreviousData}, Path=Value, Converter={StaticResource myXYConverter}"
-                                            EndPoint="{Binding Path=Value, Converter={StaticResource myXYConverter}"/>-->
+                                        <LineGeometry>
+                                            <LineGeometry.StartPoint>
+                                                <MultiBinding Converter="{StaticResource myXYConverter}" Mode="OneWay">
+                                                    <!-- index -->
+                                                    <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                         Path="(ItemsControl.AlternationIndex)"/>
+                                                    <!-- assumed height -->
+                                                    <Binding ElementName="txtBlck" Path="ActualHeight"/>
+                                                    <!-- prev value -->
+                                                    <Binding RelativeSource="{RelativeSource Mode=PreviousData}" Path="Value"/>
+                                                </MultiBinding>
+                                            </LineGeometry.StartPoint>
+                                            <LineGeometry.EndPoint>
+                                                <MultiBinding Converter="{StaticResource myXYConverter}" Mode="OneWay">
+                                                    <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                         Path="(ItemsControl.AlternationIndex)"/>
+                                                    <Binding ElementName="txtBlck" Path="ActualHeight"/>
+                                                    <Binding Path="Value"/>
+                                                </MultiBinding>
+                                            </LineGeometry.EndPoint>
+                                        </LineGeometry>
                                     </GeometryGroup>
                                 </Path.Data>
                             </Path>
