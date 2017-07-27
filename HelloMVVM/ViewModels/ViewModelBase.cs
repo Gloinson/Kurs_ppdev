@@ -7,15 +7,6 @@ namespace HelloMVVM.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void RaisePropertyChanged([CallerMemberName] string param = null)
-        {
-            // to avoid threading-problems
-            // does not solve problem with self-disposed event-receiver
-            var threadtmp = PropertyChanged;
-            if (threadtmp != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(param));
-        }
-
         protected void RaisePropertyChanged2([CallerMemberName] string param = null)
         {
             // inherently thread-safe, copying the value itself before usage

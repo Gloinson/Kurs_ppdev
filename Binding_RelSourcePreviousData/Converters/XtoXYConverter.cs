@@ -27,6 +27,7 @@ namespace Binding_RelSourcePreviousData.Converters
             throw new NotImplementedException();
         }
     }
+
     internal class XtoXYConverter : IMultiValueConverter
     {
         public object Convert(object[] value, Type targetType, object parameter, CultureInfo culture)
