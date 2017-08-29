@@ -31,10 +31,25 @@ namespace Binding_RelSourcePreviousData
         {
             var rnd = new Random();
             var ret = new List<Item>();
-            for(int i=0; i<50; i++) {
-                ret.Add(new Item { Value = rnd.Next(100) } );
+            for (int i = 0; i < 50; i++)
+            {
+                ret.Add(new Item { Value = rnd.Next(100) });
             }
             return ret;
+        }
+
+        private IReadOnlyCollection<Item> MyItemData
+        {
+            get
+            {
+                var rnd = new Random();
+                var ret = new List<Item>();
+                for (int i = 0; i < 50; i++)
+                {
+                    ret.Add(new Item { Value = rnd.Next(100) });
+                }
+                return ret;
+            }
         }
     }
 }

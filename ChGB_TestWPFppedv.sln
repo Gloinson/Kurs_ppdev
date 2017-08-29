@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloWPF", "HalloWPF\HalloWPF.csproj", "{B8DCBFE4-1AC5-4A9D-A496-3558D8396752}"
 EndProject
@@ -50,6 +50,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateInPraxis", "DelegateExample_\DelegateInPraxis.csproj", "{61A4C228-8B32-48E3-8A2C-2D1C65A6C22F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloMVVM", "HelloMVVM\HelloMVVM.csproj", "{FD718280-4B33-4098-A018-A3907FE56673}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExpress_QualitativeScaleComparer", "DevExpress_QualitativeScaleComparer\DevExpress_QualitativeScaleComparer.csproj", "{A251385C-CD34-481F-94B4-00862E2784BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,8 +155,15 @@ Global
 		{FD718280-4B33-4098-A018-A3907FE56673}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD718280-4B33-4098-A018-A3907FE56673}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD718280-4B33-4098-A018-A3907FE56673}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A251385C-CD34-481F-94B4-00862E2784BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A251385C-CD34-481F-94B4-00862E2784BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A251385C-CD34-481F-94B4-00862E2784BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A251385C-CD34-481F-94B4-00862E2784BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3CD3536-30C4-4DF1-9EED-787F6183A95C}
 	EndGlobalSection
 EndGlobal
