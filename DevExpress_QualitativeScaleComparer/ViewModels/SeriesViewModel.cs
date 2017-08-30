@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using DevExpress.Mvvm;
+using DevExpress.Xpf.Charts;
 
 namespace DevExpress_QualitativeScaleComparer.ViewModels
 {
@@ -25,6 +26,8 @@ namespace DevExpress_QualitativeScaleComparer.ViewModels
             private set;
         }
 
+        public ObservableCollection<SelectionModesMapping> SelModMap { get; private set; }
+
         public SeriesViewModel()
         {
             MTD = new ObservableCollection<DataPoints>
@@ -39,6 +42,16 @@ namespace DevExpress_QualitativeScaleComparer.ViewModels
                 new DataPoints {Series="S2", Argument = "3", Value = 3}
             };
             OnPropertyChanged(nameof(MTD));
+
+            SelModMap = new ObservableCollection<SelectionModesMapping>();
+            foreach (SeriesSelectionMode mode in Enum.GetValues(typeof(SeriesSelectionMode)))
+                SelModMap.Add(new SelectionModesMapping { SeriesModeName = Enum.GetName(typeof(SeriesSelectionMode), mode), Mode = mode });
+        }
+
+        public class SelectionModesMapping
+        {
+            public string SeriesModeName { get; set; }
+            public SeriesSelectionMode Mode { get; set; }
         }
 
         public class DataPoints

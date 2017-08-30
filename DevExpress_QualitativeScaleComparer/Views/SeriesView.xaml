@@ -13,8 +13,14 @@
     <UserControl.DataContext>
         <vm:SeriesViewModel/>
     </UserControl.DataContext>
+    <UserControl.Resources>
+        <Style TargetType="RadioButton">
+            <Setter Property="FontSize" Value="10"/>
+        </Style>
+    </UserControl.Resources>
     <StackPanel Orientation="Horizontal">
         <dxc:ChartControl
+            SeriesSelectionMode="Argument"
             DataContext="{Binding}" DataSource="{Binding MTD}">
             <dxc:XYDiagram2D
                 SeriesDataMember="Series">
@@ -36,8 +42,17 @@
                         CrosshairEnabled="False"
                         ArgumentScaleType="Qualitative"
                         ValueScaleType="Numerical"/>
-                    </dxc:XYDiagram2D.SeriesTemplate>
+                </dxc:XYDiagram2D.SeriesTemplate>
             </dxc:XYDiagram2D>
         </dxc:ChartControl>
+        <StackPanel>
+            <ItemsControl IsTabStop="True" ItemsSource="{Binding SelModMap}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <RadioButton GroupName="KurvenHighlight" Content="{Binding SeriesModeName}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
     </StackPanel>
 </UserControl>
