@@ -20,7 +20,8 @@
     </UserControl.Resources>
     <StackPanel Orientation="Horizontal">
         <dxc:ChartControl
-            SeriesSelectionMode="Argument"
+            SeriesSelectionMode="{Binding ActualSelectionMode}"
+            SelectionMode="Extended"
             DataContext="{Binding}" DataSource="{Binding MTD}">
             <dxc:XYDiagram2D
                 SeriesDataMember="Series">
@@ -45,14 +46,34 @@
                 </dxc:XYDiagram2D.SeriesTemplate>
             </dxc:XYDiagram2D>
         </dxc:ChartControl>
+
         <StackPanel>
-            <ItemsControl IsTabStop="True" ItemsSource="{Binding SelModMap}">
-                <ItemsControl.ItemTemplate>
+            <ListBox 
+                BorderBrush="{x:Null}" Background="{x:Null}"
+                ItemsSource="{Binding SelModMap}" SelectedItem="{Binding SelectedItem}">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                    <ContentPresenter />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <RadioButton GroupName="KurvenHighlight" Content="{Binding SeriesModeName}"/>
+                        <RadioButton Content="{Binding SeriesModeName}" GroupName="KurvenHighlight">
+                            <RadioButton.IsChecked>
+                                <Binding Path="IsSelected"
+                                         RelativeSource="{RelativeSource AncestorType=ListBoxItem}"
+                                         Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
+                            </RadioButton.IsChecked>
+                        </RadioButton>
                     </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
     </StackPanel>
 </UserControl>

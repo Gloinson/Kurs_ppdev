@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using DevExpress.Mvvm;
+using DevExpress.Mvvm.Native;
 using DevExpress.Xpf.Charts;
 
 namespace DevExpress_QualitativeScaleComparer.ViewModels
@@ -26,7 +27,24 @@ namespace DevExpress_QualitativeScaleComparer.ViewModels
             private set;
         }
 
-        public ObservableCollection<SelectionModesMapping> SelModMap { get; private set; }
+        public ReadOnlyObservableCollection<SelectionModesMapping> SelModMap { get; private set; }
+
+        public SeriesSelectionMode ActualSelectionMode
+        {
+            get { return SelectedItem.Mode; }
+        }
+
+        private SelectionModesMapping selectedItem;
+        public SelectionModesMapping SelectedItem
+        {
+            get { return selectedItem; }
+            set
+            {
+                selectedItem = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ActualSelectionMode)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedItem)));
+            }
+        }
 
         public SeriesViewModel()
         {
@@ -35,7 +53,7 @@ namespace DevExpress_QualitativeScaleComparer.ViewModels
                 new DataPoints {Series="S2", Argument = "4", Value = 4},
                 new DataPoints {Series="S1", Argument = "three", Value = 3},
 
-                new DataPoints {Series="S1", Argument = "one", Value = 1},
+                new DataPoints {Series="S1", Argument = "two", Value = 2},
                 new DataPoints {Series="S1", Argument = "two", Value = 2},
                 new DataPoints {Series="S2", Argument = "1", Value = 1},
                 new DataPoints {Series="S2", Argument = "2", Value = 2},
@@ -43,9 +61,12 @@ namespace DevExpress_QualitativeScaleComparer.ViewModels
             };
             OnPropertyChanged(nameof(MTD));
 
-            SelModMap = new ObservableCollection<SelectionModesMapping>();
-            foreach (SeriesSelectionMode mode in Enum.GetValues(typeof(SeriesSelectionMode)))
-                SelModMap.Add(new SelectionModesMapping { SeriesModeName = Enum.GetName(typeof(SeriesSelectionMode), mode), Mode = mode });
+            SelModMap = Enum.GetValues(typeof(SeriesSelectionMode))
+                .OfType<SeriesSelectionMode>()
+                .Select(e => new SelectionModesMapping {SeriesModeName = e.ToString(), Mode = e})
+                .ToReadOnlyObservableCollection();
+            
+            SelectedItem = SelModMap.First();
         }
 
         public class SelectionModesMapping
