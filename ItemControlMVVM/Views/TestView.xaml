@@ -7,15 +7,13 @@
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type vm:TestViewModel}}"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
         <ItemsControl DataContext="{Binding}" ItemsSource="{Binding Personen}">
+            <ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Path=Name}"/>
-                    </StackPanel>
+                <DataTemplate DataType="{x:Type vm:Person}">
+                    <TextBlock Text="{Binding Path=Arm.Abmessungen}"/>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-    </Grid>
 </UserControl>
+    

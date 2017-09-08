@@ -7,17 +7,6 @@ namespace ItemControlMVVM.ViewModels
 {
     public class TestViewModel : INotifyPropertyChanged
     {
-        public class Arme
-        {
-            public string Bezeichnung { get; set; }
-            public int[] Abmessungen { get; set; }
-        }
-        public class Person
-        {
-            public string Name { get; set; }
-            public Arme Arm { get; set; } 
-        }
-
         public ObservableCollection<Person> Personen { get; set; }
 
         public TestViewModel()
