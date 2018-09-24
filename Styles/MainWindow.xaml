@@ -21,9 +21,9 @@
         <Style TargetType="Button" BasedOn="{StaticResource allTypes}"/>
     </Window.Resources>
     <UniformGrid Rows="2" Columns="2">
-        <Button Grid.Row="0" Grid.Column="0" Content="Press me!"/>
-        <Button Grid.Row="1" Grid.Column="1" Content="Press me!"/>
-        <Button Grid.Row="1" Grid.Column="0" Content="Press me!"/>
-        <Button Grid.Row="0" Grid.Column="1" Content="Press me!"/>
+        <Button Content="Press me!"/>
+        <Button Content="Press me!"/>
+        <Button Content="Press me!"/>
+        <Button Content="Press me!"/>
     </UniformGrid>
 </Window>
