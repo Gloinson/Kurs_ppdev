@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -8,6 +7,13 @@ namespace ItemControlMVVM.ViewModels
     public class TestViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<Person> Personen { get; set; }
+
+        public Person Person { get; set; } =
+            new Person()
+            {
+                Name = "Muhtens",
+                Arm = new Arme() { Bezeichnung = "urkslik", Abmessungen = new int[] { 11, 12, 13 } }
+            };
 
         public TestViewModel()
         {

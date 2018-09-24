@@ -10,12 +10,28 @@
     <UserControl.DataContext>
         <vm:TestViewModel/>
     </UserControl.DataContext>
-    <ItemsControl DataContext="{Binding}" ItemsSource="{Binding Personen}">
-        <ItemsControl.ItemTemplate>
+    <UniformGrid>
+        <ItemsControl DataContext="{Binding}" ItemsSource="{Binding Personen}">
+            <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="{x:Type vm:Person}">
-                    <TextBlock Text="{Binding Path=Arm.Abmessungen[0]}"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Arm Index 0: "/>
+                        <TextBlock Text="{Binding Path=Arm.Abmessungen[0]}"/>
+                    </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+
+
+        <ContentControl Content="{Binding Person}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type vm:Person}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Person "/>
+                        <TextBlock Text="{Binding Path=Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
+    </UniformGrid>
 </UserControl>
-    
